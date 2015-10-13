@@ -1,0 +1,22 @@
+* PaspMirror Slide
+  This is slide for [[http://iotlt.connpass.com/event/20246/][IoTLT vol.8]]
+
+** File Structure
+   - images: graphics used in the slide
+  
+** Usage
+*** View Slide
+    #+BEGIN_SRC shell
+    npm install --production
+    open index.html
+    #+END_SRC
+    
+*** Develop Slide
+    #+BEGIN_SRC shell
+    npm install
+    gulp
+    #+END_SRC
+
+** Links
+   - [[http://shwr.me/][shower]]: slide library
+
