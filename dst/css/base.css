@@ -1,0 +1,33 @@
+a {
+  color: #ffa100;
+  -webkit-transition: color 0.1s ease-in-out;
+          transition: color 0.1s ease-in-out;
+}
+.spase-shadow {
+  text-shadow: 0 10px 0 rgba(0,0,0,0.3);
+}
+.blur-image {
+  filter: blur(0.6px);
+  -webkit-filter: blur(0.8px) brightness(0.6);
+}
+[layout=code] .hljs-comment {
+  color: #555;
+}
+[layout][invert] a:link,
+[layout][invert] a:visited,
+[layout][invert] a:active {
+  color: #ffa100;
+}
+[layout][invert] a:hover {
+  color: #ffd080;
+}
+.slide.cover {
+  text-align: center;
+  font-size: 1.2em;
+  color: rgba(255,255,255,0.8);
+}
+.slide.cover h2 {
+  margin-top: 0.8em;
+  font-size: 4.5em;
+  color: rgba(255,255,255,0.8);
+}

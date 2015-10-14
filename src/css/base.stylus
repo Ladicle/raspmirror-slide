@@ -1,0 +1,32 @@
+linkColor = #FFA100
+
+a
+  color linkColor
+  transition color .1s ease-in-out
+
+.spase-shadow
+  text-shadow 0 10px 0 rgba(0, 0, 0, 0.3)
+
+.blur-image
+  filter blur(.6px)
+  -webkit-filter blur(.8px) brightness(.6)
+
+[layout=code] .hljs-comment
+  color #555
+
+[layout][invert] a:link,
+[layout][invert] a:visited,
+[layout][invert] a:active
+  color linkColor
+[layout][invert] a:hover
+  color lighten(linkColor, 50%)
+
+.slide.cover
+  text-align center
+  font-size 1.2em
+  color #fffC
+
+.slide.cover h2
+  margin-top .8em
+  font-size 4.5em
+  color #Fffc

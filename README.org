@@ -5,18 +5,10 @@
    - images: graphics used in the slide
   
 ** Usage
-*** View Slide
-    #+BEGIN_SRC shell
-    npm install --production
-    open index.html
-    #+END_SRC
-    
-*** Develop Slide
-    #+BEGIN_SRC shell
-    npm install
-    gulp
-    #+END_SRC
+   #+BEGIN_SRC shell
+   npm install
+   gulp
+   #+END_SRC
 
 ** Links
    - [[http://shwr.me/][shower]]: slide library
-

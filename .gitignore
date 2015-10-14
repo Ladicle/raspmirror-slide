@@ -1,0 +1,7 @@
+# OSX
+.DS_STORE
+
+# npm ( exclusion shower packages )
+node_modules/*
+!node_modules/shower-core/
+!node_modules/shower-ribbon/
