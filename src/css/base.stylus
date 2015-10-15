@@ -1,15 +1,18 @@
-linkColor = #FFA100
+accentColor = #FFA100
 
 a
-  color linkColor
+  color accentColor
   transition color .1s ease-in-out
 
 .spase-shadow
   text-shadow 0 10px 0 rgba(0, 0, 0, 0.3)
 
 .blur-image
-  filter blur(.6px)
+  filter blur(.6px) brightness(.6)
   -webkit-filter blur(.8px) brightness(.6)
+
+.bg-image
+  background url("../../pictures/bg.jpg")
 
 [layout=code] .hljs-comment
   color #555
@@ -17,16 +20,47 @@ a
 [layout][invert] a:link,
 [layout][invert] a:visited,
 [layout][invert] a:active
-  color linkColor
+  color accentColor
 [layout][invert] a:hover
-  color lighten(linkColor, 50%)
+  color lighten(accentColor, 50%)
 
+section.slide .uppp
+  margin-top -100px
+  
+.slide .accent
+  color accentColor
+  
 .slide.cover
   text-align center
   font-size 1.2em
-  color #fffC
+  color #FFFC
 
 .slide.cover h2
+  font-size 6em
+  color #FFFE
+
+.slide.title h2
   margin-top .8em
   font-size 4.5em
-  color #Fffc
+  color #FFFC
+  
+.aboutme
+  margin 80px 50px
+
+.myname
+  margin 30px 40px
+  float left
+
+.fullname
+  font-size 3em
+  font-weight bold
+  line-height 0.5em
+
+.nickname
+  font-size 1.5em
+
+.icon
+  float left
+  width 200px
+  border-radius 100px
+  vertical-align middle

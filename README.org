@@ -12,3 +12,5 @@
 
 ** Links
    - [[http://shwr.me/][shower]]: slide library
+** Thanks
+   - cover.jpg : European Southern Observatory

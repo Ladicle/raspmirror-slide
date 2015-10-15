@@ -7,8 +7,11 @@ a {
   text-shadow: 0 10px 0 rgba(0,0,0,0.3);
 }
 .blur-image {
-  filter: blur(0.6px);
+  filter: blur(0.6px) brightness(0.6);
   -webkit-filter: blur(0.8px) brightness(0.6);
+}
+.bg-image {
+  background: url("../../pictures/bg.jpg");
 }
 [layout=code] .hljs-comment {
   color: #555;
@@ -21,13 +24,44 @@ a {
 [layout][invert] a:hover {
   color: #ffd080;
 }
+section.slide .uppp {
+  margin-top: -100px;
+}
+.slide .accent {
+  color: #ffa100;
+}
 .slide.cover {
   text-align: center;
   font-size: 1.2em;
   color: rgba(255,255,255,0.8);
 }
 .slide.cover h2 {
+  font-size: 6em;
+  color: rgba(255,255,255,0.933);
+}
+.slide.title h2 {
   margin-top: 0.8em;
   font-size: 4.5em;
   color: rgba(255,255,255,0.8);
+}
+.aboutme {
+  margin: 80px 50px;
+}
+.myname {
+  margin: 30px 40px;
+  float: left;
+}
+.fullname {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 0.5em;
+}
+.nickname {
+  font-size: 1.5em;
+}
+.icon {
+  float: left;
+  width: 200px;
+  border-radius: 100px;
+  vertical-align: middle;
 }

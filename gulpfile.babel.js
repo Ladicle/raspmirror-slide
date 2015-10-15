@@ -8,7 +8,7 @@ gulp.task('babel', () => {
   gulp.src('./src/js/*.js')
     .pipe($.plumber())
     .pipe($.babel())
-    .pipe(gulp.dest('./dest/js'));
+    .pipe(gulp.dest('./dst/js'));
 });
 
 gulp.task('stylus', () => {
@@ -41,7 +41,6 @@ gulp.task('watch', () => {
   gulp.watch('./src/css/*.stylus', ['stylus', 'reload']);
   gulp.watch('./src/*.jade', ['jade', 'reload']);
   gulp.watch('./src/module/*.jade', ['jade', 'reload']);
-  gulp.watch('index.html', ['reload']);
 });
 
 gulp.task('build', ['babel', 'stylus', 'jade']);

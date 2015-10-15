@@ -1,5 +1,6 @@
 - title='Rasp Mirror'
 - author='ladicle'
+- fullname='Aya Igarashi'
 
 doctype html
 html
@@ -16,19 +17,185 @@ html
       p @#{author}
 
     //- Start Slide Page
-    section.slide.cover
+    section.slide.cover.title
       div
         h2.spase-shadow #{title}
         p AyaIgarashi - 
-          a(href="http://twitter.com/ladicle") @ladicle
+          a(href="http://twitter.com/#{author}") @#{author}
         img.blur-image(src="pictures/cover.jpg")
+
+    section.slide.bg-image
+      div
+        h2 About Me?
+        div.aboutme
+          img.icon(src="pictures/ladicle.jpg")
+          div.myname
+            span.nickname.spase
+              a(href="http://twitter.com/#{author}") #{author}
+            br
+            span.fullname.spas #{fullname}
 
     section.slide.shout
       div
-        h2.spase-shadow Thank you!
+        h2 Today topic is..
+    section.slide.cover.shout.spase-shadow
+      div
+        h2 Mirror
+        img.blur-image(src="pictures/mirror.jpg")
+    section.slide.shout
+      div
+        h2 AND
+    section.slide.cover.shout.spase-shadow
+      div
+        h2 RaspberryPi
+        img.blur-image(src="pictures/raspberry.jpeg")
+    section.slide.shout
+      div
+        h2 For Short
+    section.slide.cover.shout.spase-shadow
+      div
+        h2.accent RaspMirror
+
+    section.slide.spase-shadow
+      div(style="background:#000")
+        h2.accent Demo
+        iframe(src="https://vine.co/v/eET7e0X3xYj/embed/simple",width="600",height="600",frameborder="0")
+        script(src="https://platform.vine.co/static/scripts/embed.js")
+
+    section.slide.shout
+      div
+        h2 解説
+
+    section.slide
+      div
+        h2 マジックミラーとは?
+        ul(style="margin-left:1em,margin-bottom:0")
+          dd ガラス等の透明素材の上に金属皮膜を薄くして
+          dd 入射角の半分のみ透過したもの
+        img.uppp(src="pictures/principle.png",width="400px",style="float:right")
+
+    section.slide
+      div
+        h2 RaspMirrorの仕組み
+        ul(style="margin-left:1em")
+          li 液晶画面 On  ⇢  液晶側が明るく映像は透過
+          li 液晶画面 Off ⇢  外が明るく光は反射し鏡に見える
+        img.uppp(src="pictures/principle.png",width="400px",style="float:right")
+
+    section.slide
+      div
+        h2 RaspMirrorの成分
+        ul(style="margin-left:3em")
+          li
+            a(href="http://www.amazon.co.jp/gp/product/B00MJVS0B4/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00MJVS0B4&linkCode=as2&tag=ladicle-22") ポリカハーフミラー
+          li
+            a(href="http://www.amazon.co.jp/gp/product/B00T356SFO/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00T356SFO&linkCode=as2&tag=ladicle-22") RaspberryPi Model2 typeB
+          li
+            a(href="http://www.amazon.co.jp/gp/product/B00X2N2Y5G/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B00X2N2Y5G&linkCode=as2&tag=ladicle-22") 10インチ液晶
+          li
+            a(href="http://www.amazon.co.jp/gp/product/B003714XN4/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=B003714XN4&linkCode=as2&tag=ladicle-22") 黒画用紙
+          li
+            a 両面テープ
+    section.slide
+      div
+        img.uppp(src="pictures/blackp.jpg" width="400px")
+    
+    section.slide
+      div
+        img.uppp(src="pictures/paste.jpg" width="400px")
+
+    section.slide
+      div
+        img.uppp(src="pictures/bootp.jpg" width="400px")
+            
+    section.slide
+      div
+        h2 RaspMirrorができるまで
+        ol(style="margin-left:3em")
+          li 液晶画面を組み立てる
+          li 黒画用紙に両面テープを貼る
+          li 液晶画面をマジックミラーの任意の場所に置く
+          li 液晶画面を覆い被すように黒画用紙をマジックミラーに貼る
+          li RaspberryPiの設定
+          li ミラー表示用のアプリを開発する
+
+    section.slide.shout
+      div
+        H3 RaspberryPiの
+        h2.accent 事前設定
+    
+    section.slide
+      div
+        h2 #1 自動スリープの抑制
+        pre(style="margin-left:4em")
+          code.accent $ cat /etc/xdg/lxsession/LXDE-pi/autostart
+          code @lxpanel --profile LXDE-pi
+          code @pcmanfm --desktop --profile LXDE-pi
+          code @xscreensaver -no-splash
+          code @xset s off
+          code @xset -dpms
+          code @xset s noblank
+
+    section.slide
+      div(style="margin-top:2.5em")
+        h2 #2 全画面用ブラウザの "INSTALL"
+        pre(style="margin-left:4em")
+          code sudo apt-get install
+            b.accent  unclutter
+        h2 #3 カーソル非表示用PKGの "INSTALL"
+        pre(style="margin-left:4em")
+          code sudo apt-get install
+            b.accent  chromium-browser
+          
+    section.slide
+      div
+        h2 アプリの構成
+        img(src="pictures/arch.png")
+
+    section.slide
+      div
+        h2 アプリの起動
+        pre(style="margin-left:4em")
+          code http-server -p 
+            b.accent 8000 
+            b &
+          code startx &
+          code export DISPLAY=:
+            b.accent 0.0
+          code chromium --kiosk --ignore-certificate-errors \
+          code          --dsiable-sync --disable-restore-se
+          code ssion-state 
+            b.accent http://localhost:8000/
+
+    section.slide
+      div
+        h2 改善点!
+        ul(style="margin-left:2em")
+          li 白い両面テープの部分が目立つ
+          dd.accent ⇢ 黒い両面テープを発注中
+        ul(style="margin-left:2em")
+          li ペラペラ過ぎて安定感がない
+          li 見た目が悪い
+          dd.accent ⇢ 専用のケースを用意する
+
+    section.slide
+      div
+        h2 これから!!
+        ul(style="margin-left:3em")
+          li RaspberryPiに
+            b.accent 光センサ
+            span を使った画面のOnOff自動化
+          li 歯ブラシを使った
+            b.accent コントローラ
+            span の作成
+
+    section.slide.cover.spase-shadow
+      div
+        h2.spase-shadow(style="margin-top:0.6em") Thank you!
+        img.light-blur(src="pictures/cover.jpg")
 
     //- Fotter
     div.progress
       div
     script(src="node_modules/shower-core/shower.min.js")
-    script(src="dest/js/link-open-another-window.js")
+    script(src="dst/js/link-open-another-window.js")
